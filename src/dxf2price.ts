@@ -521,13 +521,9 @@ async function processFile() {
     return -1;
   }
   const inputFileName: string = argv._[0];
-  var outputFileName: string = path.basename(inputFileName.replace('dxf', 'json'));
-  if(argv.o) {
-    outputFileName = argv.o;
-  }
+
   const data: FileData = await getFileData(inputFileName);
-  //console.log(Math.ceil(data.width*data.height/10**6*sheetPrice + data.perimeter/10**3*cuttingPrice + data.shapes.length*entracePrice));
-  console.log(`Площадь: ${data.width*data.height/10**6}\n Периметр: ${data.perimeter/10**3}\n Число входов: ${data.shapes.length}`);
+  console.log(Math.ceil(data.width*data.height/10**6*sheetPrice + data.perimeter/10**3*cuttingPrice + data.shapes.length*entracePrice));
 }
 
 processFile();
