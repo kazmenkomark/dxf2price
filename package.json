@@ -1,0 +1,30 @@
+{
+  "name": "dxf2price",
+  "version": "1.0.0",
+  "description": "Вычисляет стоимость резки изделия по DXFу.",
+  "main": "src/dxf2price.ts",
+  "scripts": {
+    "build": "make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazmenkomark/dxf2price"
+  },
+  "author": "Mark Kazmenko (kazmenkom@icloud.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kazmenkomark/dxf2price/issues"
+  },
+  "homepage": "https://github.com/kazmenkomark/dxf2price/#readme",
+  "dependencies": {
+    "@flatten-js/core": "1.2.20",
+    "dxf-parser": "1.0.0-alpha.2",
+    "package.json": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "14.14.31",
+    "minimist": "^1.2.7",
+    "ts-node": "^10.7.0",
+    "typescript": "4.2.2"
+  }
+}
