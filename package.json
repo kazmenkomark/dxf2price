@@ -19,7 +19,8 @@
   "dependencies": {
     "@flatten-js/core": "1.2.20",
     "dxf-parser": "1.0.0-alpha.2",
-    "package.json": "^2.0.1"
+    "package.json": "^2.0.1",
+    "pkg": "^5.8.1"
   },
   "devDependencies": {
     "@types/node": "14.14.31",

@@ -496,25 +496,25 @@ async function processFile() {
     console.log("ОШИБКА: слишком мало аргументов");
     return -1;
   }
-  if(argv.sheetPrice)
+  if('sheetPrice' in argv)
     sheetPrice = Number(argv.sheetPrice);
-  else if(argv.s)
+  else if('s' in argv)
     sheetPrice = argv.s;
   else {
     console.log("ОШИБКА: не задана цена листа");
     return -1;
   }
-  if(argv.entracePrice)
+  if('entracePrice' in argv)
     entracePrice = Number(argv.entracePrice);
-  else if(argv.e)
+  else if('e' in argv)
     entracePrice = argv.e;
   else {
     console.log("ОШИБКА: не задана цена входа");
     return -1;
   }
-  if(argv.cuttingPrice)
+  if('cuttingPrice' in argv)
     cuttingPrice = Number(argv.cuttingPrice);
-  else if(argv.c)
+  else if('c' in argv)
     cuttingPrice = argv.c;
   else {
     console.log("ОШИБКА: не задана цена метра резки");
@@ -523,7 +523,8 @@ async function processFile() {
   const inputFileName: string = argv._[0];
 
   const data: FileData = await getFileData(inputFileName);
-  console.log(Math.ceil(data.width*data.height/10**6*sheetPrice + data.perimeter/10**3*cuttingPrice + data.shapes.length*entracePrice));
+  //console.log(`A: ${data.width*data.height/10**6}m2 L: ${data.perimeter/10**3}m E: ${data.shapes.length}`)
+  console.log(data.width*data.height/10**6*sheetPrice + data.perimeter/10**3*cuttingPrice + data.shapes.length*entracePrice);
 }
 
 processFile();
